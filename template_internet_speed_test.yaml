@@ -13,18 +13,7 @@ zabbix_export:
       description: |
         ## Overview
         
-        Zabbix Speed Teste Tempalte.
-        
-        
-        Descrição em breve
-        
-        
-        
-        ## Author
-        
-        Fabricio Guiamraes
-        
-        
+        Zabbix SpeedTest Template.
       groups:
         -
           name: Templates
