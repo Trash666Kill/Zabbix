@@ -1,0 +1,6 @@
+Instale o SpeedTest a partir da fonte:"curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash"
+Mova o speedtest.sh para "/usr/lib/zabbix/externalscripts/"
+Dê permissão para execução:"chmod +x /usr/lib/zabbix/externalscripts/speedtest.sh"
+Execute o script manualmente como root e aceite os termos do SpeedTest
+Agende uma tarefa no Cron:"*/30 * * * * /usr/lib/zabbix/externalscripts/speedtest.sh"
+Adicione o template no zabbix, ao seu host destinado as métricas em questão e por fim, seja feliz!
