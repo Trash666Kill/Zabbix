@@ -1,3 +1,4 @@
+Instale o zabbix-sender:"apt install zabbix-sender"
 Instale o SpeedTest a partir da fonte:"curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash"
 Mova o speedtest.sh para "/usr/lib/zabbix/externalscripts/"
 Dê permissão para execução:"chmod +x /usr/lib/zabbix/externalscripts/speedtest.sh"
