@@ -471,7 +471,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>proc.num[,,run]</key>
+                    <key>ct.proc.num[,,run]</key>
                     <delay>1m</delay>
                     <history>1w</history>
                     <trends>365d</trends>
@@ -1970,7 +1970,7 @@
                             <dynamic>0</dynamic>
                             <sort_triggers>0</sort_triggers>
                             <resource>
-                                <key>proc.num[,,run]</key>
+                                <key>ct.proc.num[,,run]</key>
                                 <host>Template Linux Container</host>
                             </resource>
                             <max_columns>3</max_columns>
@@ -2143,7 +2143,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template Linux Container:proc.num[,,run].avg(5m)}&gt;100</expression>
+            <expression>{Template Linux Container:ct.proc.num[,,run].avg(5m)}&gt;100</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Too many processes running on {HOST.NAME}</name>
