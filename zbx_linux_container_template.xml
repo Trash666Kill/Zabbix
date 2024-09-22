@@ -389,7 +389,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>kernel.maxfiles</key>
+                    <key>ct.kernel.maxfiles</key>
                     <delay>1h</delay>
                     <history>1w</history>
                     <trends>365d</trends>
@@ -1999,7 +1999,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template Linux Container:kernel.maxfiles.last(0)}&lt;1024</expression>
+            <expression>{Template Linux Container:ct.kernel.maxfiles.last(0)}&lt;1024</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Configured max number of opened files is too low on {HOST.NAME}</name>
