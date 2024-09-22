@@ -430,7 +430,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>kernel.maxproc</key>
+                    <key>ct.kernel.maxproc</key>
                     <delay>1h</delay>
                     <history>1w</history>
                     <trends>365d</trends>
@@ -2015,7 +2015,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template Linux Container:kernel.maxproc.last(0)}&lt;256</expression>
+            <expression>{Template Linux Container:ct.kernel.maxproc.last(0)}&lt;256</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Configured max number of processes is too low on {HOST.NAME}</name>
