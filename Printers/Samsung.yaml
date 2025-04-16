@@ -252,5 +252,5 @@ zabbix_export:
         -
           color: 199C0D
           item:
-            host: SAMSUNG
+            host: Samsung Printers
             key: tonerBk
