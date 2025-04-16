@@ -14,7 +14,47 @@ zabbix_export:
       template: Samsung Printers
       name: Samsung Printers
       description: |
-      #N/A
+        ## Overview
+
+        Developed by Thomas Lage
+
+        E-Mail: lage.thomas@gmail.com
+
+        Telegram: @lagethomasm
+
+        Template for Samsung printers, built with the main configurations needed for use in the company I work for, tested and developed based on the models:
+
+        SL-M4025ND
+
+        SL-M4075FR
+
+        FEATURES:
+
+        Department information (if registered in the printer)
+
+        Model
+
+        Serial number
+
+        IP address
+
+        MAC address
+
+        Toner level (numbers)
+
+        Toner level (%) - Trigger notifies at 5% toner
+
+        Photoconductor level (numbers) - Trigger notifies at 5% photoconductor
+
+        Total prints
+
+        Among others...
+
+        As I'm new to Zabbix, this is my first template, and I decided to share and contribute to the community.
+
+        ## Author
+
+        Thomas Henrique Lage
       groups:
         -
           name: Printers
@@ -88,7 +128,7 @@ zabbix_export:
           triggers:
             -
               uuid: db44200efff0499cbcfc104ebd919928
-              expression: last(/SAMSUNG/sams.clr.black.img)<500
+              expression: last(/Samsung Printers/sams.clr.black.img)<500
               name: 'Photoconductor Replacement on {HOST.HOST}'
               status: DISABLED
               priority: INFO
@@ -208,7 +248,7 @@ zabbix_export:
           triggers:
             -
               uuid: ea69467c90af4c4baeaa841230bd86ca
-              expression: 'find(/SAMSUNG/paperType,,"like","iso_a4")=0'
+              expression: 'find(/Samsung Printers/paperType,,"like","iso_a4")=0'
               name: 'Paper type changed from A4 to {ITEM.VALUE} on {HOST.HOST}'
               priority: INFO
         -
@@ -228,7 +268,7 @@ zabbix_export:
           triggers:
             -
               uuid: 6495eb7e158d482a92a218bb210f99c4
-              expression: last(/SAMSUNG/tonerBk)=5
+              expression: last(/Samsung Printers/tonerBk)=5
               name: 'Toner at 5% on {HOST.HOST}, replace it'
               priority: WARNING
       valuemaps:
