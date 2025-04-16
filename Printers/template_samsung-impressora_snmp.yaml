@@ -14,25 +14,25 @@ zabbix_export:
       #N/A
       groups:
         -
-          name: Impressoras
+          name: Printers
       items:
         -
           uuid: abf2ac193ec24876ae83c5200019d9c7
-          name: 'Bandeja 1 - Capacidade de folhas'
+          name: 'Tray 1 - Paper Capacity'
           type: SNMP_AGENT
           snmp_oid: .1.3.6.1.2.1.43.8.2.1.9.1.1
-          key: folhasQnt
+          key: paperQty
           delay: 30s
         -
           uuid: b57fd5a024ce432997724659c8d6868c
-          name: 'Bandeja 2 - Capacidade de folhas'
+          name: 'Tray 2 - Paper Capacity'
           type: SNMP_AGENT
           snmp_oid: .1.3.6.1.2.1.43.8.2.1.9.1.2
-          key: folhasQnt2
+          key: paperQty2
           delay: 30s
         -
           uuid: 4bb89a80046149de9d95a3bc7ab260d7
-          name: Modelo
+          name: Model
           type: SNMP_AGENT
           snmp_oid: .1.3.6.1.2.1.25.3.2.1.3.1
           key: hrDeviceDescr.1
@@ -43,10 +43,10 @@ zabbix_export:
           tags:
             -
               tag: Application
-              value: 'Informacoes do Equipamento'
+              value: 'Device Information'
         -
           uuid: 4b1965192d8e446ca02ed393e5097b82
-          name: Conectividade
+          name: Connectivity
           type: SIMPLE
           key: icmpping
           delay: 30s
@@ -55,10 +55,10 @@ zabbix_export:
           tags:
             -
               tag: Application
-              value: 'Informações de rede'
+              value: 'Network Information'
         -
           uuid: e62992538dcd452f902e4001b46489f9
-          name: 'Endereço IP'
+          name: 'IP Address'
           type: SNMP_AGENT
           snmp_oid: .1.3.6.1.4.1.236.11.5.1.12.2.5.0
           key: ipAdEntAddr
@@ -68,10 +68,10 @@ zabbix_export:
           tags:
             -
               tag: Application
-              value: 'Informações de rede'
+              value: 'Network Information'
         -
           uuid: da7e3dfd88dd433f9251b2a12757415e
-          name: 'Nível do fotocondutor'
+          name: 'Photoconductor Level'
           type: SNMP_AGENT
           snmp_oid: .1.3.6.1.2.1.43.11.1.1.9.1.2
           key: sams.clr.black.img
@@ -81,18 +81,18 @@ zabbix_export:
           tags:
             -
               tag: Application
-              value: 'Informações de suprimentos'
+              value: 'Supply Information'
           triggers:
             -
               uuid: db44200efff0499cbcfc104ebd919928
               expression: last(/SAMSUNG/sams.clr.black.img)<500
-              name: 'Troca de fotocondutor em {HOST.HOST}'
+              name: 'Photoconductor Replacement on {HOST.HOST}'
               status: DISABLED
               priority: INFO
               manual_close: 'YES'
         -
           uuid: 24e01a51f29b4c59b9356ad6ae9efb48
-          name: 'Nível toner Black'
+          name: 'Black Toner Level'
           type: SNMP_AGENT
           snmp_oid: .1.3.6.1.2.1.43.11.1.1.9.1.1
           key: sams.clr.black.perc
@@ -103,10 +103,10 @@ zabbix_export:
           tags:
             -
               tag: Application
-              value: 'Informações de suprimentos'
+              value: 'Supply Information'
         -
           uuid: 434f2a98f4a943ec8dac49ce73d3e7fe
-          name: 'Total de impressões'
+          name: 'Total Prints'
           type: SNMP_AGENT
           snmp_oid: .1.3.6.1.2.1.43.10.2.1.4.1.1
           key: sams.clr.counter
@@ -114,23 +114,23 @@ zabbix_export:
           tags:
             -
               tag: Application
-              value: 'Informações de suprimentos'
+              value: 'Supply Information'
         -
           uuid: b4ad40ab092341d2a820f7817d6f7eec
-          name: Domínio
+          name: Domain
           type: SNMP_AGENT
           snmp_oid: .1.3.6.1.4.1.236.11.5.1.12.2.21.0
-          key: sysDominio
+          key: sysDomain
           delay: 30s
           trends: '0'
           value_type: CHAR
           tags:
             -
               tag: Application
-              value: 'Informações de rede'
+              value: 'Network Information'
         -
           uuid: b66d5ed4f81d4ddcad5fdbce2529852f
-          name: Localização
+          name: Location
           type: SNMP_AGENT
           snmp_oid: .1.3.6.1.2.1.1.6.0
           key: sysLocation.0
@@ -140,10 +140,10 @@ zabbix_export:
           tags:
             -
               tag: Application
-              value: 'Informacoes do Equipamento'
+              value: 'Device Information'
         -
           uuid: 4202dcfde46d494fb153698619ee5d9d
-          name: 'Endereço MAC'
+          name: 'MAC Address'
           type: SNMP_AGENT
           snmp_oid: .1.3.6.1.2.1.2.2.1.6.1
           key: sysMac
@@ -153,10 +153,10 @@ zabbix_export:
           tags:
             -
               tag: Application
-              value: 'Informações de rede'
+              value: 'Network Information'
         -
           uuid: 65fc419280ef4837b2918445e1a05ca9
-          name: 'Número de série'
+          name: 'Serial Number'
           type: SNMP_AGENT
           snmp_oid: .1.3.6.1.2.1.43.5.1.1.16.1
           key: sysSn
@@ -166,7 +166,7 @@ zabbix_export:
           tags:
             -
               tag: Application
-              value: 'Informacoes do Equipamento'
+              value: 'Device Information'
         -
           uuid: 7a9ab9cf25524c8fafbd6d2c4184dc65
           name: Status
@@ -179,10 +179,10 @@ zabbix_export:
           tags:
             -
               tag: Application
-              value: 'Informações do sistema'
+              value: 'System Information'
         -
           uuid: efb54f7574b44067b998195959bda7e2
-          name: 'Tempo ligada'
+          name: 'Uptime'
           type: SNMP_AGENT
           snmp_oid: .1.3.6.1.2.1.1.3.0
           key: sysUpTime.0
@@ -192,25 +192,25 @@ zabbix_export:
           tags:
             -
               tag: Application
-              value: 'Informações do sistema'
+              value: 'System Information'
         -
           uuid: 82fe0d9e822e43289bf301f5fe72aa31
-          name: 'Tipo de papel'
+          name: 'Paper Type'
           type: SNMP_AGENT
           snmp_oid: .1.3.6.1.2.1.43.8.2.1.12.1.1
-          key: tipoPapel
+          key: paperType
           delay: 30s
           trends: '0'
           value_type: CHAR
           triggers:
             -
               uuid: ea69467c90af4c4baeaa841230bd86ca
-              expression: 'find(/SAMSUNG/tipoPapel,,"like","iso_a4")=0'
-              name: 'Tipo de papel alterado de  A4 para {ITEM.VALUE} em {HOST.HOST}'
+              expression: 'find(/SAMSUNG/paperType,,"like","iso_a4")=0'
+              name: 'Paper type changed from A4 to {ITEM.VALUE} on {HOST.HOST}'
               priority: INFO
         -
           uuid: ae1731bf1f7d4597a9e62b2c56a2a17c
-          name: 'Nível toner Black (%)'
+          name: 'Black Toner Level (%)'
           type: SNMP_AGENT
           snmp_oid: .1.3.6.1.4.1.236.11.5.1.1.3.22.0
           key: tonerBk
@@ -221,12 +221,12 @@ zabbix_export:
           tags:
             -
               tag: Application
-              value: 'Informações de suprimentos'
+              value: 'Supply Information'
           triggers:
             -
               uuid: 6495eb7e158d482a92a218bb210f99c4
               expression: last(/SAMSUNG/tonerBk)=5
-              name: 'Toner em 5% em {HOST.HOST}, efetuar a troca'
+              name: 'Toner at 5% on {HOST.HOST}, replace it'
               priority: WARNING
       valuemaps:
         -
@@ -235,14 +235,14 @@ zabbix_export:
           mappings:
             -
               value: '0'
-              newvalue: Offiline
+              newvalue: Offline
             -
               value: '1'
               newvalue: Online
   graphs:
     -
       uuid: d9dceefbc5b744c2addc192e036c584c
-      name: 'Nível de toner'
+      name: 'Toner Level'
       ymin_type_1: FIXED
       ymax_type_1: FIXED
       graph_items:
